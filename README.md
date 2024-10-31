@@ -481,3 +481,27 @@ git remote add origin https://github.com/usuario/repositorio.git
 
 # 7. Subir cambios al repositorio remoto
 git push -u origin main  # o 'master' en repositorios más antiguos
+public class ValidadorNumeros {
+
+    public static void main(String[] args) {
+        try {
+            String input = " 123 456 789 ";
+            String resultado = validarNumero(input);
+            System.out.println("Cadena válida: " + resultado);
+        } catch (Exception e) {
+            System.err.println("Excepción: " + e.getMessage());
+        }
+    }
+
+    public static String validarNumero(String input) throws Exception {
+        // Elimina los espacios en blanco de la cadena
+        String sinEspacios = input.replaceAll("\\s+", "");
+
+        // Verifica si la cadena resultante solo contiene dígitos
+        if (!sinEspacios.matches("\\d+")) {
+            throw new Exception("La cadena contiene caracteres no numéricos.");
+        }
+
+        return sinEspacios;
+    }
+}
