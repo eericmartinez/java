@@ -1,5 +1,5 @@
 se# java
-java repositorie
+java repositories
 
 
 import java.io.IOException;
